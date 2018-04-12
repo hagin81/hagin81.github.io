@@ -1,0 +1,54 @@
+body { 
+    background-color: rgba(128, 128, 128, 0.274);
+}
+
+.navbar-brand {
+background-color: #0BADA6;
+color: black !important;
+font-weight: bold;
+font-size: 40px;
+}
+
+.main, .sidebar {
+    background-color: white;
+}
+
+.main h1, .sidebar h1 {
+    color: #0BADA6;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main-img {
+    float: left;
+    margin-right: 15px;
+}
+
+.content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.viz-item {
+    text-align: center;
+    color:  #0BADA6;
+    font-weight: bold;
+    font-size: 16px; 
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    background-color: rgba(250, 114, 23, 0.308) !important;
+}
+
+.link-active {
+    border: 3px solid teal;
+}
+
+@media only screen and (device-width: 768px),
+       only screen and (max-width: 768px) {
+/* change navbar color on small screens */
+
+ .navbar-header {
+     background-color: #0BADA6;
+   }
+}

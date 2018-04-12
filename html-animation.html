@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+/*part1*/
+.part1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(216, 51, 87);
+    position: relative;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    /* Standard syntax */
+    animation-name: example;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+/*part2*/
+.part2 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: relative;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: example2;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    /* Standard syntax */
+    animation-name: example2;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+/*part1b*/
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:rgb(216, 51, 87); left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:rgb(216, 51, 87); left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+
+
+
+
+/*part2b*/
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example2 {
+    0%   {background-color:rgb(216, 51, 87); left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:rgb(216, 51, 87); left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example2 {
+    0%   {background-color:yellow; left:0px; top:0px;}
+    25%  {background-color:blue; left:200px; top:0px;}
+    50%  {background-color:rgb(170, 45, 76); left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:yellow; left:0px; top:0px;}
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div class="part1"></div>
+<div class="part2"></div>
+
+</body>
+</html>
