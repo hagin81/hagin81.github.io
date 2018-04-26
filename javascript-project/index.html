@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript and DOM Manipulation Background</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="data.js"></script>
+    <style>
+    body {
+        margin-top: 50px;
+    }
+
+    th {text-align: center
+
+    }
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-lg-12">
+        <select id="criteria">
+            <option value="datetime">Date/Time</option>
+            <option value="city">City</option>
+             <option value="state">State</option>
+            <option value="country">Country</option>
+            <option value="shape">Shape</option>
+        </select>
+    <input type="text" id="search">
+    <button id="get-results">Search</button>
+    <p id="dataSet"></p>
+         </div>
+       </div>
+    </div>
+
+
+    <script>
+        // variables 
+        var DateTime, City , State, Country, Shape, Comments;
+
+        // start of table
+        var table  =`
+        <table class="table table-striped">
+            <tr>
+                <th> Date/Time </th>
+                <th> City </th> <th> State </th> <th> Country </th> <th> Shape </th> <th> Comments </th>
+            </tr>
+        `
+// default - show all results 
+
+// loop over dataSet
+for (var i = 0; i <dataSet.length; i++) {
+            
+            // console.log(dataSet[i]);
+        var DateTime = dataSet[i]["datetime"];
+        var City = dataSet[i]["city"];
+        var State = dataSet[i]["state"];
+        var Country = dataSet[i]["country"];
+        var Shape = dataSet[i]["shape"];
+        var Comments = dataSet[i]["comments"];
+
+table +=`
+    
+    <tr>
+        <td> ${DateTime} </td>  <td> ${City} </td> <td> ${State} </td> <td> ${Country} </td> <td> ${Shape} </td> <td> ${Comments} </td>
+    </tr>
+
+    `
+ }
+
+// replace content of p tag with table 
+document.getElementById("dataSet").innerHTML = table;   
+
+    
+ // search
+        document.getElementById("get-results").addEventListener("click", search);
+      
+        function search() {
+        var criteria = document.getElementById('criteria').value;
+        var data_input = document.getElementById("search").value;
+        document.getElementById("dataSet").innerHTML = '';
+
+        var search_table  =`
+        <table class="table table-striped">
+            <tr>
+                <th> Date/Time </th>
+                <th> City </th> <th> State </th> <th> Country </th> <th> Shape </th> <th> Comments </th>
+            </tr>
+        `
+
+         // loop over dataSet
+         for (var i = 0; i <dataSet.length; i++) {
+            
+            // console.log(dataSet[i]);
+        var DateTime = dataSet[i]["datetime"];
+        var City = dataSet[i]["city"];
+        var State = dataSet[i]["state"];
+        var Country = dataSet[i]["country"];
+        var Shape = dataSet[i]["shape"];
+        var Comments = dataSet[i]["comments"];
+        
+        function search_criteria( field ) { 
+        if ( dataSet[i][field] == data_input ){
+
+            search_table += `
+            <tr>
+                    <td> ${DateTime} </td>  <td> ${City} </td> <td> ${State} </td> <td> ${Country} </td> <td> ${Shape} </td> <td> ${Comments} </td>
+                </tr>
+            `
+           }
+        }
+
+        if ( criteria == 'datetime') search_criteria('datetime');
+        if ( criteria == 'city') search_criteria('city');
+        if ( criteria == 'state') search_criteria('state');
+        if ( criteria == 'country') search_criteria('country');
+        if ( criteria == 'shape') search_criteria('shape');
+
+    }
+     // end of table 
+     search_table +=`
+        </table>
+        `
+        // replace content of p tag with table 
+        document.getElementById("dataSet").innerHTML = search_table; 
+}   
+
+    </script>
