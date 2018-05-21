@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>United States Geological Survey ( USGS ) Earthquake Visualization</title>
+
+  <!-- Bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- d3 JavaScript -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">United States Geological Survey ( USGS ) Earthquake Visualization</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#map1">Map 1</a></li>
+        <li><a href="#map2">Map 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container text-center">
+  <div class="col-lg-12">
+
+  <!-- Step 1 -->
+  <div class="row" id="map1">
+  <div id="map"></div>
+   </div>
+
+  <!-- Step 2 -->
+  <div class="row" id="map2">
+      <div id="map1"></div>
+       </div>
+   
+  </div> <!-- col-lg-12 -->
+  </div> <!-- container -->
+
+  <!-- Our JS -->
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
